@@ -18,12 +18,12 @@
   "author": "Volkan Guneri",
   "main": "index.js",
   "scripts": {
-    "all": "pnpm run clean && pnpm install && turbo run start",
+    "all": "pnpm run clean && pnpm install && turbo start",
     "clean": "pnpm -r clean && rm -rf node_modules .turbo",
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
+    "build": "pnpm run build",
+    "dev": "pnpm run dev",
+    "lint": "pnpm run lint",
+    "test": "pnpm run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
