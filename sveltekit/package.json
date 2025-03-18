@@ -23,6 +23,12 @@
 		"test": "npm run test:unit && npm run test:e2e",
 		"test:e2e": "playwright test"
 	},
+	"dependencies": {
+		"@allfeat/sdk": "github:Allfeat/allfeat-sdk-js",
+		"@polkadot/extension-dapp": "^0.57.1",
+		"@polkadot/extension-inject": "^0.57.1",
+		"@polkadot/typegen": "^15.5.1"
+	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",

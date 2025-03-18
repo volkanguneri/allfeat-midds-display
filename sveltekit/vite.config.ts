@@ -5,6 +5,12 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [tailwindcss(), sveltekit()],
+    resolve: {
+        alias: {
+            '$utils': '/utils',
+            '$types': '/src/lib/ts/types'
+        }
+    },
 
     test: {
         workspace: [{

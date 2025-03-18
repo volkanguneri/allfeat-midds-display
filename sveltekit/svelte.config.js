@@ -25,6 +25,10 @@ const config = {
 		paths: {
 			base: '',
 			assets: ''
+		},
+		alias: {
+			'$utils': './utils',
+			'$types': './src/lib/ts/types'
 		}
 	}
 };
