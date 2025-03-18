@@ -27,7 +27,7 @@ const config = {
 			assets: ''
 		},
 		alias: {
-			'$utils': './utils',
+			'$utils': './src/lib/utils',
 			'$types': './src/lib/ts/types'
 		}
 	}
