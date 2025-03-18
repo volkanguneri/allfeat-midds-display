@@ -1,5 +1,11 @@
 <script lang="ts">
 	import ButtonWallet from './Buttons/ButtonWallet.svelte';
+	import { walletState } from '$utils/walletState.svelte';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		walletState.init();
+	});
 </script>
 
 <header
