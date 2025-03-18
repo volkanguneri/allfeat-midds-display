@@ -1,0 +1,50 @@
+{
+  "name": "allfeat-midds-display",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Allfeat Midds Display",
+  "keywords": [
+    "allfeat",
+    "polkadot",
+    "substrate",
+    "MIDDS",
+    "kredeum",
+    "sveltekit",
+    "svelte"
+  ],
+  "homepage": "",
+  "license": "MIT",
+  "author": "Volkan Guneri",
+  "main": "index.js",
+  "scripts": {
+    "all": "pnpm run clean && pnpm install && turbo run start",
+    "clean": "pnpm -r clean && rm -rf node_modules .turbo",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bufferutil",
+      "esbuild",
+      "glob-promise",
+      "node-datachannel",
+      "utf-8-validate"
+    ]
+  },
+  "packageManager": "pnpm@8.15.4",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "workspaces": [
+    "sveltekit"
+  ]
+}

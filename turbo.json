@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".envrc"],
+  "globalPassThroughEnv": ["PRIVATE_KEY", "DEPLOYER_ADDRESS"],
+  "envMode": "strict",
+  "ui": "stream",
+  "tasks": {
+    "format": {
+      "inputs": ["src/**", "script/**", "test/**"],
+      "outputLogs": "new-only"
+    },
+    "check": {
+      "dependsOn": ["format"],
+      "outputLogs": "new-only"
+    },
+    "build": {
+      "dependsOn": ["check"],
+      "outputLogs": "new-only"
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "outputLogs": "new-only"
+    }
+  }
+}
