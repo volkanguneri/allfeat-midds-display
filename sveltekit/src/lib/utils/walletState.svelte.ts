@@ -10,7 +10,7 @@ class WalletState {
 
 	public async init() {
 		if (!browser) return;
-		
+
 		this.extensions = await web3Enable('Allfeat MIDDS Display');
 		console.log('this.extensions', this.extensions);
 		if (this.extensions.length > 0) {
