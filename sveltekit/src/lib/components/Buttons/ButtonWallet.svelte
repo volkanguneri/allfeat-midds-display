@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { walletState } from '$utils/walletState.svelte';
+
 	let {
 		size = 'small',
 		color = 'plain'
@@ -6,7 +8,9 @@
 		size?: 'small' | 'big';
 		color?: 'plain' | 'transparent';
 	} = $props();
+	const address = $derived(walletState.accounts?.[0]?.address);
 
+	$inspect('address', address);
 	const buttonClasses = $derived(
 		[
 			// Base styles
@@ -25,19 +29,18 @@
 	);
 </script>
 
-<button type="button" class={buttonClasses}>
-	<svg
-		class="mr-2.5 h-[35%] w-auto"
-		xmlns="http://www.w3.org/2000/svg"
-		width="18"
-		height="18"
-		viewBox="0 0 18 18"
-		fill="none"
+<button
+	type="button"
+	class={buttonClasses}
+	onclick={walletState.connected
+		? null
+		: async () => {
+				await walletState.init();
+			}}
+>
+	<span class="transition-transform duration-[50ms] ease-out"
+		>{walletState.accounts?.[0]
+			? walletState.shortenAddress(walletState.accounts[0])
+			: 'Connect wallet'}</span
 	>
-		<path
-			fill="currentColor"
-			d="M0 3.6c0-.99.81-1.8 1.8-1.8h13.5a.9.9 0 0 1 .9.9v.9H1.8v.9h15.3a.9.9 0 0 1 .9.9v9a1.8 1.8 0 0 1-1.8 1.8H1.8A1.8 1.8 0 0 1 0 14.4V3.6Zm14.85 8.1a1.35 1.35 0 1 0 0-2.7 1.35 1.35 0 0 0 0 2.7Z"
-		/>
-	</svg>
-	<span class="transition-transform duration-[50ms] ease-out">Connect wallet</span>
 </button>
